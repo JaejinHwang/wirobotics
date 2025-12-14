@@ -10,11 +10,11 @@ function HeroSection() {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.4;
+      videoRef.current.playbackRate = 1;
     }
   }, []);
 
-  const heroText = t('hero.text').split('\n');
+  const heroText = t("hero.text").split("\n");
 
   return (
     <section className="hero-section">
