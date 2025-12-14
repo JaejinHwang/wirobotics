@@ -1,0 +1,206 @@
+.allex-hero {
+  background-color: #000000;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0 80px;
+}
+
+.allex-hero-container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+}
+
+.allex-hero-content {
+  flex: 1;
+  max-width: 60%;
+  z-index: 2;
+}
+
+.allex-hero-title {
+  font-size: 52px;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 67.2px;
+  margin: 0 0 48px 0;
+}
+
+.allex-hero-subtitle {
+  font-size: 52px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 67.2px;
+  margin: 0 0 80px 0;
+}
+
+.allex-hero-description {
+  font-size: 22.3px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 31.2px;
+  margin: 0 0 120px 0;
+}
+
+.allex-hero-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.allex-hero-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 24px 0;
+  position: relative;
+}
+
+.allex-hero-feature::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 1px;
+  background-color: #ffffff;
+}
+
+.allex-hero-feature:last-child::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 1px;
+  background-color: #ffffff;
+}
+
+.allex-hero-feature-number {
+  font-size: 80px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1;
+  min-width: 60px;
+}
+
+.allex-hero-feature-text {
+  flex: 1;
+}
+
+.allex-hero-feature-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 31.2px;
+  margin: 0;
+  display: inline;
+}
+
+.allex-hero-feature-desc {
+  font-size: 24px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 31.2px;
+  margin: 0;
+  display: inline;
+}
+
+.allex-hero-image-wrapper {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 55%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  z-index: 3;
+}
+
+.allex-hero-image {
+  /* 1920px 기준 스케일링: 뷰포트가 줄어들면 이미지도 비례하여 축소 */
+  /* scale = min(1, 100vw / 1920px) */
+  width: auto;
+  height: auto;
+  max-height: 90vh;
+  object-fit: contain;
+  transform: scale(clamp(0.5, calc(100vw / 1920px), 1));
+  transform-origin: bottom right;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .allex-hero-container {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .allex-hero-content {
+    max-width: 100%;
+  }
+
+  .allex-hero-image-wrapper {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .allex-hero-image {
+    max-height: 60vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .allex-hero {
+    padding: 100px 0 60px;
+  }
+
+  .allex-hero-container {
+    padding: 0 20px;
+  }
+
+  .allex-hero-title {
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  .allex-hero-subtitle {
+    font-size: 32px;
+    line-height: 44px;
+    margin-bottom: 24px;
+  }
+
+  .allex-hero-description {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 40px;
+  }
+
+  .allex-hero-feature {
+    gap: 20px;
+    padding: 16px 0;
+  }
+
+  .allex-hero-feature-number {
+    font-size: 48px;
+    min-width: 40px;
+  }
+
+  .allex-hero-feature-title,
+  .allex-hero-feature-desc {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

@@ -1,0 +1,144 @@
+.allex-feature {
+  background-color: #000000;
+  padding: 120px 0;
+  width: 100%;
+}
+
+.allex-feature-list {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  padding: 0 60px;
+}
+
+.allex-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.allex-feature-item.reverse {
+  flex-direction: row-reverse;
+}
+
+.allex-feature-content {
+  flex: 1;
+  color: #ffffff;
+}
+
+.allex-feature-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 6.56px;
+  margin-bottom: 24px;
+}
+
+.allex-feature-title {
+  font-size: 52px;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 67.2px;
+  margin: 0 0 24px 0;
+}
+
+.allex-feature-highlight {
+  font-size: 22.3px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 40px;
+  margin: 0 0 24px 0;
+}
+
+.allex-feature-highlight strong {
+  font-weight: bold;
+}
+
+.allex-feature-desc {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 32px;
+  margin: 0;
+}
+
+.allex-feature-desc p {
+  margin: 0;
+}
+
+.allex-feature-video-wrapper {
+  flex: 1;
+  max-width: 675px;
+}
+
+.allex-feature-video {
+  width: 100%;
+  height: 379px;
+  border-radius: 44px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .allex-feature-list {
+    padding: 0 40px;
+    gap: 80px;
+  }
+
+  .allex-feature-item {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .allex-feature-item.reverse {
+    flex-direction: column;
+  }
+
+  .allex-feature-title {
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  .allex-feature-video-wrapper {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .allex-feature-video {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .allex-feature {
+    padding: 80px 0;
+  }
+
+  .allex-feature-list {
+    padding: 0 20px;
+    gap: 60px;
+  }
+
+  .allex-feature-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .allex-feature-highlight {
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  .allex-feature-desc {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .allex-feature-video {
+    height: 240px;
+    border-radius: 24px;
+  }
+}
