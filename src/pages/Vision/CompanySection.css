@@ -1,0 +1,103 @@
+.company-section {
+  background-color: #edefed;
+  padding: 80px 0;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.company-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.company-label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  color: #005831;
+  letter-spacing: 6.56px;
+  margin-bottom: 16px;
+}
+
+.company-title {
+  font-size: 52px;
+  font-weight: bold;
+  color: #000000;
+  line-height: 67.2px;
+  margin: 0 0 24px 0;
+}
+
+.company-subtitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.72);
+  line-height: 31.2px;
+  margin: 0;
+}
+
+.company-video-container {
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.company-video {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.company-content {
+  text-align: center;
+}
+
+.company-description {
+  font-size: 22px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.72);
+  line-height: 31.2px;
+  margin: 0 0 60px 0;
+}
+
+.company-features {
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+  margin-bottom: 60px;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feature-icon {
+  width: 32px;
+  height: 33px;
+  margin-bottom: 16px;
+}
+
+.feature-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.72);
+  line-height: 32px;
+}
+
+.feature-light {
+  font-weight: 400;
+}
+
+.feature-bold {
+  font-weight: bold;
+}
+
+.company-footer {
+  font-size: 22px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.72);
+  line-height: 31.2px;
+  margin: 0;
+}
