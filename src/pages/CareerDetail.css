@@ -1,0 +1,191 @@
+.career-detail-page {
+  background-color: #f7f7f7;
+  min-height: 100vh;
+}
+
+.career-detail-container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 174px 226px 200px;
+}
+
+.career-back-link {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 400;
+  color: #000;
+  line-height: 38px;
+  text-decoration: none;
+  margin-bottom: 80px;
+}
+
+.career-back-link:hover {
+  text-decoration: underline;
+}
+
+.career-detail-title {
+  font-size: 52px;
+  font-weight: bold;
+  color: #000;
+  line-height: 38px;
+  margin: 0 0 108px 0;
+}
+
+.career-detail-content {
+  display: flex;
+  gap: 100px;
+}
+
+/* Left Column */
+.career-detail-left {
+  flex: 1;
+  max-width: 1100px;
+}
+
+.career-section {
+  margin-bottom: 60px;
+}
+
+.career-section:last-child {
+  margin-bottom: 0;
+}
+
+.career-section-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  line-height: 38px;
+  margin: 0 0 8px 0;
+}
+
+.career-section-text {
+  font-size: 24px;
+  font-weight: 400;
+  color: #000;
+  line-height: 38px;
+  margin: 0;
+  white-space: pre-line;
+}
+
+.career-section-list {
+  font-size: 24px;
+  font-weight: 400;
+  color: #000;
+  line-height: 38px;
+  margin: 0;
+  padding-left: 36px;
+}
+
+.career-section-list li {
+  margin: 0;
+}
+
+/* Right Column */
+.career-detail-right {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.career-info-item {
+  font-size: 24px;
+  font-weight: 400;
+  color: #000;
+  line-height: 38px;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+  .career-detail-container {
+    padding: 140px 120px 150px;
+  }
+
+  .career-detail-content {
+    gap: 60px;
+  }
+
+  .career-detail-right {
+    width: 240px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .career-detail-container {
+    padding: 120px 80px 120px;
+  }
+
+  .career-detail-title {
+    font-size: 40px;
+    margin-bottom: 80px;
+  }
+
+  .career-detail-content {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .career-detail-left {
+    max-width: 100%;
+  }
+
+  .career-detail-right {
+    width: 100%;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding-top: 24px;
+    border-top: 1px solid #ddd;
+  }
+
+  .career-back-link {
+    font-size: 20px;
+    margin-bottom: 60px;
+  }
+
+  .career-section-title,
+  .career-section-text,
+  .career-section-list,
+  .career-info-item {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .career-section-list {
+    padding-left: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .career-detail-container {
+    padding: 100px 20px 80px;
+  }
+
+  .career-detail-title {
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 60px;
+  }
+
+  .career-back-link {
+    font-size: 16px;
+    line-height: 28px;
+    margin-bottom: 40px;
+  }
+
+  .career-section-title,
+  .career-section-text,
+  .career-section-list,
+  .career-info-item {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .career-section-list {
+    padding-left: 24px;
+  }
+
+  .career-detail-right {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

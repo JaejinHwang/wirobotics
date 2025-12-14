@@ -18,12 +18,13 @@ function Header() {
   }, []);
 
   const isActive = (path) => location.pathname === path;
+  const isCareerDetail = location.pathname.startsWith('/career/');
 
   return (
-    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+    <header className={`header ${isScrolled ? 'scrolled' : ''} ${isCareerDetail ? 'header-dark' : ''}`}>
       <div className="header-container">
         <Link to="/vision" className="header-logo">
-          <img src="/images/logo_white.png" alt="WIRobotics" />
+          <img src={isCareerDetail ? "/images/logo.png" : "/images/logo_white.png"} alt="WIRobotics" />
         </Link>
 
         <nav className="header-nav">

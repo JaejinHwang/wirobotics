@@ -104,3 +104,16 @@
 .header-lang:hover span.active {
   opacity: 1;
 }
+
+/* Career Detail page styles - dark header */
+.header.header-dark .nav-link {
+  color: #1a1a1a;
+}
+
+.header.header-dark .header-lang {
+  color: #1a1a1a;
+}
+
+.header.header-dark.scrolled {
+  background-color: rgba(255, 255, 255, 0.9);
+}
