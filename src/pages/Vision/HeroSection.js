@@ -25,11 +25,12 @@ function HeroSection() {
       <div className="hero-overlay">
         <img src="/images/logo.png" alt="WIRobotics" className="hero-logo" />
         <p className="hero-text">
-          revolutionize the world and transform lives by
+          우리의 비전은 안전하고 인간과 공존하는 상호작용형 휴머노이드 로봇을
+          통해
           <br />
-          building safe, human-coexistent, interactive robots that
+          일상 속에 자연스럽게 스며들어 인간의 능력을 확장하고,
           <br />
-          seamlessly integrate into daily life and enhance human capabilities.
+          세상을 혁신하며 삶을 변화시키는 것입니다
         </p>
       </div>
     </section>
