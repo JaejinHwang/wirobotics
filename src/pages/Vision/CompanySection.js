@@ -1,16 +1,24 @@
 import { useLanguage } from "../../contexts/LanguageContext";
 import { getTranslation } from "../../translations";
+import useFadeIn from "../../hooks/useFadeIn";
+import "../../hooks/useFadeIn.css";
 import "./CompanySection.css";
 
 function CompanySection() {
   const { language } = useLanguage();
   const t = (key) => getTranslation(language, key);
 
+  const headerFade = useFadeIn();
+  const contentFade = useFadeIn();
+
   const footerText = t('company.footer').split('\n');
 
   return (
     <section className="company-section">
-      <div className="company-header">
+      <div
+        ref={headerFade.ref}
+        className={`company-header fade-in-element ${headerFade.isVisible ? 'visible' : ''}`}
+      >
         <span className="company-label">{t('company.label')}</span>
         <h2 className="company-title">{t('company.title')}</h2>
         <p className="company-subtitle">{t('company.subtitle')}</p>
@@ -22,7 +30,10 @@ function CompanySection() {
         </video>
       </div>
 
-      <div className="company-content">
+      <div
+        ref={contentFade.ref}
+        className={`company-content fade-in-element ${contentFade.isVisible ? 'visible' : ''}`}
+      >
         <p className="company-description">{t('company.description')}</p>
 
         <div className="company-features">

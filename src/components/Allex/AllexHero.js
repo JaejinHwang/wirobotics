@@ -1,10 +1,14 @@
 import { useLanguage } from "../../contexts/LanguageContext";
 import { getTranslation } from "../../translations";
+import useFadeIn from "../../hooks/useFadeIn";
+import "../../hooks/useFadeIn.css";
 import "./AllexHero.css";
 
 function AllexHero() {
   const { language } = useLanguage();
   const t = (key) => getTranslation(language, key);
+
+  const contentFade = useFadeIn({ delay: 100 });
 
   const features = [
     {
@@ -34,7 +38,10 @@ function AllexHero() {
   return (
     <section className="allex-hero">
       <div className="allex-hero-container">
-        <div className="allex-hero-content">
+        <div
+          ref={contentFade.ref}
+          className={`allex-hero-content fade-in-element ${contentFade.isVisible ? 'visible' : ''}`}
+        >
           <h1 className="allex-hero-title">ALLEX</h1>
           <p className="allex-hero-subtitle">
             {subtitleLines.map((line, index) => (

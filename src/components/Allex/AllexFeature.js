@@ -1,5 +1,6 @@
 import { useLanguage } from "../../contexts/LanguageContext";
 import { getTranslation } from "../../translations";
+import FadeInWrapper from "../FadeInWrapper";
 import './AllexFeature.css';
 
 function AllexFeature() {
@@ -66,7 +67,7 @@ function AllexFeature() {
             key={feature.id}
             className={`allex-feature-item ${index % 2 === 1 ? 'reverse' : ''}`}
           >
-            <div className="allex-feature-content">
+            <FadeInWrapper className="allex-feature-content">
               <p className="allex-feature-label">{feature.label}</p>
               <h3 className="allex-feature-title">
                 {feature.title.map((line, i) => (
@@ -84,7 +85,7 @@ function AllexFeature() {
                   <p key={i}>{line}</p>
                 ))}
               </div>
-            </div>
+            </FadeInWrapper>
             <div className="allex-feature-video-wrapper">
               <video
                 className="allex-feature-video"

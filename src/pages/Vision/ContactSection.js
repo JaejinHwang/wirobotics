@@ -1,10 +1,14 @@
 import { useLanguage } from "../../contexts/LanguageContext";
 import { getTranslation } from "../../translations";
+import useFadeIn from "../../hooks/useFadeIn";
+import "../../hooks/useFadeIn.css";
 import "./ContactSection.css";
 
 function ContactSection() {
   const { language } = useLanguage();
   const t = (key) => getTranslation(language, key);
+
+  const contentFade = useFadeIn();
 
   const titleLines = t('contact.title').split('\n');
   const desc1Lines = t('contact.description1').split('\n');
@@ -12,7 +16,10 @@ function ContactSection() {
 
   return (
     <section className="contact-section">
-      <div className="contact-content">
+      <div
+        ref={contentFade.ref}
+        className={`contact-content fade-in-element ${contentFade.isVisible ? 'visible' : ''}`}
+      >
         <span className="contact-label">{t('contact.label')}</span>
         <h2 className="contact-title">
           {titleLines.map((line, index) => (

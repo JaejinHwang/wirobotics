@@ -22,6 +22,17 @@
   align-items: center;
 }
 
+.hero-overlay.fade-in-element {
+  opacity: 0;
+  transform: translate(-50%, calc(-50% + 30px));
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.hero-overlay.fade-in-element.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
 .hero-logo {
   /* 1920px 기준 400px -> 400/1920 = 20.833vw */
   width: calc(400 / 1920 * 100vw);

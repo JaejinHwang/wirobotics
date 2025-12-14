@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "../../contexts/LanguageContext";
 import { getTranslation } from "../../translations";
+import useFadeIn from "../../hooks/useFadeIn";
+import "../../hooks/useFadeIn.css";
 import "./FeatureSection.css";
 
 const videoSources = [
@@ -15,6 +17,8 @@ function FeatureSection() {
   const trackRef = useRef(null);
   const { language } = useLanguage();
   const t = (key) => getTranslation(language, key);
+
+  const headerFade = useFadeIn();
 
   const extendedVideos = [
     videoSources[videoSources.length - 1],
@@ -88,7 +92,10 @@ function FeatureSection() {
 
   return (
     <section className="feature-section">
-      <div className="feature-header">
+      <div
+        ref={headerFade.ref}
+        className={`feature-header fade-in-element ${headerFade.isVisible ? 'visible' : ''}`}
+      >
         <span className="feature-label">{t('feature.label')}</span>
         <h2 className="feature-title">{t('feature.title')}</h2>
         <p className="feature-description">
