@@ -1,8 +1,10 @@
 import { Link, useLocation } from 'react-router-dom';
+import { useLanguage } from '../contexts/LanguageContext';
 import './Header.css';
 
 function Header() {
   const location = useLocation();
+  const { language, toggleLanguage } = useLanguage();
 
   const isActive = (path) => location.pathname === path;
 
@@ -34,9 +36,11 @@ function Header() {
           </Link>
         </nav>
 
-        <div className="header-lang">
-          KOR/ENG
-        </div>
+        <button className="header-lang" onClick={toggleLanguage}>
+          <span className={language === 'ko' ? 'active' : ''}>KOR</span>
+          <span className="lang-divider">/</span>
+          <span className={language === 'en' ? 'active' : ''}>ENG</span>
+        </button>
       </div>
     </header>
   );

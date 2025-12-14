@@ -1,41 +1,59 @@
+import { useLanguage } from "../../contexts/LanguageContext";
+import { getTranslation } from "../../translations";
 import "./ContactSection.css";
 
 function ContactSection() {
+  const { language } = useLanguage();
+  const t = (key) => getTranslation(language, key);
+
+  const titleLines = t('contact.title').split('\n');
+  const desc1Lines = t('contact.description1').split('\n');
+  const desc2Lines = t('contact.description2').split('\n');
+
   return (
     <section className="contact-section">
       <div className="contact-content">
-        <span className="contact-label">위로보틱스는</span>
+        <span className="contact-label">{t('contact.label')}</span>
         <h2 className="contact-title">
-          휴머노이드 로봇의
-          <br />
-          새로운 패러다임을
-          <br />
-          정의합니다.
+          {titleLines.map((line, index) => (
+            <span key={index}>
+              {line}
+              {index < titleLines.length - 1 && <br />}
+            </span>
+          ))}
         </h2>
         <div className="contact-description">
           <p>
-            우리는 기존 상용 기술의 한계를 넘어선,
-            <br />
-            전혀 새로운 휴머노이드 로봇의 패러다임을 정의합니다.
+            {desc1Lines.map((line, index) => (
+              <span key={index}>
+                {line}
+                {index < desc1Lines.length - 1 && <br />}
+              </span>
+            ))}
           </p>
           <p>
-            점진적인 개선에 머물지 않고,
-            <br />
-            진정한 인간 수준의 능력으로 도약하기 위한
-            <br />
-            근본적인 변화를 이끌어갑니다.
+            {desc2Lines.map((line, index) => (
+              <span key={index}>
+                {line}
+                {index < desc2Lines.length - 1 && <br />}
+              </span>
+            ))}
           </p>
         </div>
         <div className="contact-buttons">
-          <a href="/product" className="contact-button">
+          <a href="/allex" className="contact-button">
             <span>
-              우리의 로봇, <strong>ALLEX</strong>를 살펴보세요.
+              {t('contact.buttonAllex')}<strong>{t('contact.buttonAllexBold')}</strong>{t('contact.buttonAllexEnd')}
             </span>
             <span className="button-arrow">&gt;</span>
           </a>
           <a href="/careers" className="contact-button">
             <span>
-              <strong>WIRobotics</strong>에 합류하세요.
+              {language === 'ko' ? (
+                <><strong>WIRobotics</strong>{t('contact.buttonCareers')}</>
+              ) : (
+                <>{t('contact.buttonCareers')}<strong>WIRobotics</strong>.</>
+              )}
             </span>
             <span className="button-arrow">&gt;</span>
           </a>

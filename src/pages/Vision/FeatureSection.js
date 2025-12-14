@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from "react";
+import { useLanguage } from "../../contexts/LanguageContext";
+import { getTranslation } from "../../translations";
 import "./FeatureSection.css";
 
 const videoSources = [
@@ -7,12 +9,12 @@ const videoSources = [
   "/videos/vision_3.3-1.mp4",
 ];
 
-const overlayLabels = ["정확한", "유연한", "목적에 부합하는"];
-
 function FeatureSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const videoRefs = useRef([]);
   const trackRef = useRef(null);
+  const { language } = useLanguage();
+  const t = (key) => getTranslation(language, key);
 
   const extendedVideos = [
     videoSources[videoSources.length - 1],
@@ -81,15 +83,21 @@ function FeatureSection() {
     });
   }, [adjustedIndex]);
 
+  const overlayLabels = t('feature.overlayLabels');
+  const descriptionLines = t('feature.description').split('\n');
+
   return (
     <section className="feature-section">
       <div className="feature-header">
-        <span className="feature-label">우리의 로봇은</span>
-        <h2 className="feature-title">인간 친화적이면서도 고도로 유능합니다.</h2>
+        <span className="feature-label">{t('feature.label')}</span>
+        <h2 className="feature-title">{t('feature.title')}</h2>
         <p className="feature-description">
-          우리는 사람과 안전하게 협업는 것은 물론, 다양한 임무 —
-          <br />
-          정밀 조작부터 역동적 작업까지 수행하는 고성능·인간 친화적 로봇을 설계합니다.
+          {descriptionLines.map((line, index) => (
+            <span key={index}>
+              {line}
+              {index < descriptionLines.length - 1 && <br />}
+            </span>
+          ))}
         </p>
       </div>
 
@@ -116,9 +124,7 @@ function FeatureSection() {
           <div className="overlay-gradient-top" />
           <div className="overlay-gradient-bottom" />
           <div className="overlay-content">
-            <p className="overlay-text-top">
-              우리의 로봇은 단순히 안전하거나 친근한 수준을 넘어,
-            </p>
+            <p className="overlay-text-top">{t('feature.overlayTop')}</p>
             <div className="overlay-label-container">
               <button className="overlay-arrow prev" onClick={goToPrev}>
                 &lt;
@@ -130,9 +136,7 @@ function FeatureSection() {
                 &gt;
               </button>
             </div>
-            <p className="overlay-text-bottom">
-              존재로서 인간이 이룰 수 있는 한계를 확장합니다.
-            </p>
+            <p className="overlay-text-bottom">{t('feature.overlayBottom')}</p>
           </div>
         </div>
       </div>

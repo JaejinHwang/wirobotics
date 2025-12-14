@@ -64,4 +64,33 @@
   letter-spacing: 0.88px;
   text-transform: uppercase;
   color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0;
+}
+
+.header-lang span {
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+.header-lang span.active {
+  opacity: 1;
+}
+
+.header-lang .lang-divider {
+  opacity: 0.5;
+  margin: 0 2px;
+}
+
+.header-lang:hover span {
+  opacity: 0.8;
+}
+
+.header-lang:hover span.active {
+  opacity: 1;
 }
